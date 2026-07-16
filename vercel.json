@@ -1,15 +1,14 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node"
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "framework": "hono",
+    "outputDirectory": "src",
+    "rewrites": [
+        {
+            "source": "/favicon.ico",
+            "destination": "/favicon.png"
+        }
+    ],
+    "github": {
+        "silent": true
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/"
-    }
-  ]
 }
