@@ -1,14 +1,15 @@
 {
-    "$schema": "https://openapi.vercel.sh/vercel.json",
-    "framework": "hono",
-    "outputDirectory": "src",
-    "rewrites": [
-        {
-            "source": "/favicon.ico",
-            "destination": "/favicon.png"
-        }
-    ],
-    "github": {
-        "silent": true
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.js",
+      "use": "@vercel/node"
     }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/index.js"
+    }
+  ]
 }
