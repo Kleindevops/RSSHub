@@ -25,7 +25,7 @@
             "import": "./dist-lib/pkg.mjs"
         }
     },
-    "scripts": {
+"scripts": {
         "build": "npm run build:routes && tsdown",
         "build:docs": "npm run build:routes && tsx scripts/workflow/build-docs.ts",
         "build:lib": "npm run build:routes && tsdown --config ./tsdown-lib.config.ts",
@@ -47,7 +47,8 @@
         "start": "cross-env NODE_ENV=production NODE_OPTIONS='--max-http-header-size=32768' node dist/index.mjs",
         "test": "npm run format:check && npm run vitest:coverage",
         "typecheck": "tsc",
-        "vercel-build": "npm run build:routes && tsdown --config ./tsdown-vercel.config.ts"        "vitest:coverage": "cross-env NODE_ENV=test vitest --coverage.enabled --reporter=junit",
+        "vercel-build": "npm run build:routes && tsdown --config ./tsdown-vercel.config.ts",
+        "vitest:coverage": "cross-env NODE_ENV=test vitest --coverage.enabled --reporter=junit",
         "vitest:fullroutes": "cross-env NODE_ENV=test FULL_ROUTES_TEST=true vitest --reporter=json --reporter=default --outputFile=\"./assets/build/test-full-routes.json\" lib/app.test.ts",
         "vitest:watch": "cross-env NODE_ENV=test vitest --watch",
         "vitest:workerd": "cross-env NODE_ENV=test vitest run --config vitest.workers.config.ts",
