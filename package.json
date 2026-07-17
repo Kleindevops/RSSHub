@@ -47,8 +47,7 @@
         "start": "cross-env NODE_ENV=production NODE_OPTIONS='--max-http-header-size=32768' node dist/index.mjs",
         "test": "npm run format:check && npm run vitest:coverage",
         "typecheck": "tsc",
-        "vercel-build": "npm run build:routes && tsdown --config ./tsdown-vercel.config.ts && mkdir -p ./dist/node_modules/.pnpm/patchright-core@1.61.1/node_modules/patchright-core && cp ./node_modules/.pnpm/patchright-core@1.61.1/node_modules/patchright-core/browsers.json ./dist/node_modules/.pnpm/patchright-core@1.61.1/node_modules/patchright-core/browsers.json"
-        "vitest": "cross-env NODE_ENV=test vitest",
+        "vercel-build": "npm run build:routes && tsdown --config ./tsdown-vercel.config.ts && mkdir -p ./dist/node_modules/.pnpm/patchright-core@1.61.1/node_modules/patchright-core && cp ./node_modules/.pnpm/patchright-core@1.61.1/node_modules/patchright-core/browsers.json ./dist/node_modules/.pnpm/patchright-core@1.61.1/node_modules/patchright-core/browsers.json"        "vitest": "cross-env NODE_ENV=test vitest",
         "vitest:coverage": "cross-env NODE_ENV=test vitest --coverage.enabled --reporter=junit",
         "vitest:fullroutes": "cross-env NODE_ENV=test FULL_ROUTES_TEST=true vitest --reporter=json --reporter=default --outputFile=\"./assets/build/test-full-routes.json\" lib/app.test.ts",
         "vitest:watch": "cross-env NODE_ENV=test vitest --watch",
